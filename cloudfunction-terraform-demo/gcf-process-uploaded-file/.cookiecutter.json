@@ -1,0 +1,15 @@
+{
+    "_output_dir": "/Users/mu/src/transgate",
+    "_repo_dir": "cookiecutter-functions-js",
+    "_template": "cookiecutter-functions-js",
+    "author_name": "Transgate",
+    "description": "Google Cloud Function: Process uploaded audio file to calculate length",
+    "event_type": "google.cloud.storage.object.v1.finalized",
+    "gcp_project_id": "my-project",
+    "gen2": true,
+    "project_name": "GCF Process Uploaded File",
+    "project_slug": "gcf_process_uploaded_file",
+    "region": "europe-west4",
+    "runtime": "nodejs16",
+    "service_account_id": "gcf-process-uploaded-file"
+}

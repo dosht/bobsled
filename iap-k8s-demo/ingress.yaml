@@ -1,0 +1,97 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demos-ingress
+  annotations:
+    networking.gke.io/managed-certificates: demos-projectX-labs-com
+    kubernetes.io/ingress.global-static-ip-name: green-ingress-demos-default
+spec:
+  rules:
+
+  - host: "showcase-demo-for-researchers.projectX-labs.com"
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: showcase-demo-for-researchers
+            port:
+              number: 8888
+
+  - host: "sensitive-topic-tagger.projectX-labs.com"
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: sensitive-topic-tagger
+            port:
+              number: 8888
+
+  - host: "showcase-api-demo.projectX-labs.com"
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: showcase-api-demo
+            port:
+              number: 8888
+
+  - host: "videotypes.projectX-labs.com"
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: videotypes
+            port:
+              number: 8888
+
+  - host: "playlist-recommendation-demo.projectX-labs.com"
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: playlist-recommendation-demo
+            port:
+              number: 8888
+
+  - host: "yt.projectX-labs.com"
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: yt
+            port:
+              number: 8888
+
+  - host: "questionable-demo.projectX-labs.com"
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: questionable-demo
+            port:
+              number: 8888
+
+  - host: "semantic-demo.projectX-labs.com"
+    http:
+      paths:
+      - path: /*
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: semantic-demo
+            port:
+              number: 8888

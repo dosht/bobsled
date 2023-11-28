@@ -1,0 +1,14 @@
+apiVersion: networking.gke.io/v1
+kind: ManagedCertificate
+metadata:
+  name: demos-projectX-labs-com
+spec:
+  domains:
+  - showcase-demo-for-researchers.projectX-labs.com
+  - sensitive-topic-tagger.projectX-labs.com
+  - showcase-api-demo.projectX-labs.com
+  - videotypes.projectX-labs.com
+  - playlist-recommendation-demo.projectX-labs.com
+  - yt.projectX-labs.com
+  - questionable-demo.projectX-labs.com
+  - semantic-demo.projectX-labs.com

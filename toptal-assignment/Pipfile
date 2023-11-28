@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+applepen = {path = ".", editable = true}
+pandas = "*"
+tqdm = "*"
+click = "*"
+pyspark = {version = "*", extras = ["sql", "pandas_on_spark"]}
+
+[dev-packages]
+jupyterlab = "*"
+black = "*"
+pytest = "*"
+coverage = "*"
+
+[requires]
+python_version = "3.11"

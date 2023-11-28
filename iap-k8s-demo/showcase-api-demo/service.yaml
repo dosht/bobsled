@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: showcase-api-demo
+  annotations:
+    cloud.google.com/backend-config: '{"default": "demos-bc"}'
+    cloud.google.com/neg: '{"ingress": true}'
+spec:
+  type: ClusterIP
+  ports:
+  - port: 8888
+    targetPort: 8888
+  selector:
+    app: showcase-api-demo

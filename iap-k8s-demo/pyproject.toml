@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "add-demo"
+version = "1.0.0"
+description = "Dependencies for the add-demo.py script"
+authors = ["projectX Data Science <data-science@projectX.com>"]
+
+[tool.poetry.dependencies]
+python = ">=3.10,<3.11"
+click = "*"
+"ruamel.yaml" = "*"
+plumbum = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
