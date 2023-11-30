@@ -66,11 +66,10 @@ def create_overview(state: str, df: pd.DataFrame, stolen_df: pd.DataFrame) -> pd
     return overview_df[['state', 'apple_sold', 'apple_stolen', 'pen_sold', 'pen_stolen']]
 
 
-def process_store(data_path: Path, state: str, store: str):
+def process_store(data_path: Path, state: str, store: str, output_path: Path):
     inventory = pd.read_csv(data_path / f"{state}-{store}-inventory.csv")
     supply = pd.read_csv(data_path / f"{state}-{store}-supply.csv")
     sell = pd.read_csv(data_path / f"{state}-{store}-sell.csv")
-    output_path = data_path.parent / "output"
 
     df = combine_data_frames(inventory, supply, sell)
 
@@ -85,14 +84,13 @@ def process_store(data_path: Path, state: str, store: str):
     return create_overview(state, df, stolen_df)
 
 
-def process_all_stores(data_path: Path):
+def process_all_stores(data_path: Path, output_path: Path):
     files = data_path.iterdir()
     overview_dfs = []
     for state, store in tqdm(set(parse_file_name(f.name) for f in files)):
-        overview_df = process_store(data_path, state, store)
+        overview_df = process_store(data_path, state, store, output_path)
         overview_dfs.append(overview_df)
 
-    output_path = data_path.parent / "output"
     pd.concat(overview_dfs) \
         .groupby(['year', 'state']) \
         .sum() \

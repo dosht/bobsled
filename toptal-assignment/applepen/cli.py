@@ -14,9 +14,9 @@ def main(input: Path, output: Path, validate_only: bool, process_only: bool):
     output_path = Path(output)
 
     if process_only:
-        process_all_stores(input_path)
+        process_all_stores(input_path, output_path)
     elif validate_only:
         validate(Path(output_path))
     else:
-        process_all_stores(input_path)
+        process_all_stores(input_path, output_path)
         validate(Path(output_path))
